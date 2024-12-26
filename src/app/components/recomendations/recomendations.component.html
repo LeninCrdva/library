@@ -1,0 +1,32 @@
+<section class="m-auto max-w-6xl px-4 py-16" id="recomendation">
+    <h3 class="dark:text-gray-200 text-2xl font-bold mb-12">Recomendaciones <span class="border-b-4 border-orange-400">para ti</span></h3>
+    <ul class="relative flex flex-wrap justify-center gap-20 lg:grid lg:grid-cols-3">
+        @for (book of books; track book.id) {
+        <li class="list-none">
+            <article class="flex max-w-[500px] flex-col rounded-lg bg-alternative p-5 shadow-2xl h-full justify-between">
+                <picture class="relative"><img
+                        [src]="book.cover_image"
+                        alt="libro" class="aspect-video h-[200px] rounded-lg object-cover">
+                    </picture>
+                <div class="my-2 flex flex-col justify-between px-1">
+                    <div class="flex w-full items-end justify-end gap-1"><small
+                            class="mb-1 text-gray-200">Publicado en: </small><span class="text-lg font-bold dark:text-gray-100">{{book.publication_year}}</span></div>
+                    <p class="text-2xl font-bold dark:text-gray-200">
+                        {{book.title}}
+                    </p>
+                    <div class="flex w-full items-end justify-end gap-1"><p
+                        class="mb-1 text-gray-200 text-sm clamp-1">{{book.description}}</p></div>
+                    
+                </div>
+                <div class="mt-2 flex justify-evenly gap-1">
+                    <a [routerLink]="['details', book.id]" class="button-alt flex w-max cursor-pointer items-center gap-3 self-center rounded-md bg-green-whatsapp px-2 py-1 transition-transform duration-150 ease-in hover:scale-105">
+                        <p>¡Ver detalles!</p>
+                    </a></div>
+            </article>
+        </li>
+        }
+        <div
+            class="absolute bottom-20 top-24 -z-10 w-full justify-self-center rounded-3xl bg-secondary lg:h-4/5 lg:w-[105%] xl:w-[110%]">
+        </div>
+    </ul>
+</section>

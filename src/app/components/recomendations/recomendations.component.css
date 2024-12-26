@@ -1,0 +1,20 @@
+.bg-secondary {
+    background-color: #172036;
+}
+
+.bg-alternative {
+    background-color: #19233B;
+}
+
+.button-alt {
+    background-color: #ebe6fa;
+    padding: 10px 20px;
+}
+
+.clamp-1 {
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

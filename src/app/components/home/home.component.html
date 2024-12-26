@@ -1,0 +1,18 @@
+<section id="home"
+    class="m-auto flex h-screen max-w-6xl flex-col-reverse items-center justify-center px-4 pt-20 md:grid md:grid-cols-2 md:gap-20 md:pt-0">
+    <article class="flex flex-col gap-5">
+        <h3 class="dark:text-gray-200 text-lg text- uppercase">{{book?.author}}</h3>
+        <h1 class="dark:text-gray-200 text-3xl md:text-5xl capitalize font-bold leading-snug">
+            {{book?.title}}
+        </h1>
+
+        <div [innerHTML]="getTransformedText(book?.description!)" class="dark:text-gray-200 overflow-hidden max-h-32 line-clamp-3 md:max-h-48 md:line-clamp-5"></div>
+
+        <a [routerLink]="['details', book?.id]"
+            class="self-center rounded-full dark:text-gray-200 bg-blue-400 px-5 py-2 font-bold focus:outline-none hover:bg-opacity-80">
+            Leer libro
+        </a>
+    </article>
+    <div class="relative flex h-1/2 w-full justify-center mt-auto md:mt-10 md:h-4/6 md:items-center"><img
+            [src]="book?.cover_image" alt="portada libro" class="z-10 mb-24 h-[80%] md:h-96"></div>
+</section>

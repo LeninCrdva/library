@@ -1,0 +1,29 @@
+<header class="bg-white dark:bg-gray-900 fixed 
+left-0 right-0 top-0 z-30 flex w-full items-center justify-between px-5 py-2 backdrop-blur-[20px] sm:grid sm:grid-cols-3 sm:justify-between sm:px-4 sm:py-4">
+        <div class="flex flex-row mr-auto w-44 md:w-48 items-center ml-6">
+            <img class="h-20" src="logo_transp.png" alt="Bookland">
+            <div class="pl-4 my-auto hidden sm:block">
+                <span class="font-bold text-xl text-blue-900">Book<span class="text-orange-500">land</span></span>
+                <span class="text-sm text-gray-500 dark:text-gray-200 hidden sm:block">Book Store Website</span>
+            </div>
+        </div>
+
+        <div class="flex min-w-xs xl:max-w-lg 2xl:max-w-2xl dark:bg-gray-800 rounded-md items-center">
+            <select (change)="onGenreSelect($event)" class="bg-transparent capitalize dark:border-gray-200 font-bold dark:text-gray-200 text-sm p-4 mr-4" name="menu"
+                id="menu">
+                @for (genre of genres; track genre) {
+                    <option class="bg-alt" [value]="genre">{{genre}}</option>
+                }
+            </select>
+            <input class="hidden md:block w-full bg-transparent font-semibold dark:text-gray-200 text-sm pl-4 py-2" type="text"
+                placeholder="Search books here" (input)="onSearch($event)" (onblur)="onSearch($event)">
+            <button (click)="onSearch($event)" class="px-4 hidden md:block">
+                <svg class="h-5 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                        d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z">
+                    </path>
+                </svg>
+            </button>
+        </div>
+</header>
